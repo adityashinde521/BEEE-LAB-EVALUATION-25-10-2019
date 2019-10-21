@@ -11,17 +11,21 @@ void loop()
 {
   sensorValue = analogRead(sensorPin);
   Serial.println(sensorValue);
-  int i =2;
-    while(i<=6)
+  int i =7;
   {
-  if(sensorValue<500)
+      if(sensorValue<300)
   {
   digitalWrite(i, HIGH);
-  delay(1000/i); 
-  digitalWrite(i, LOW);
-  delay(1000/i); 
-    
- }
-      i++;
+  delay(1000); 
+    digitalWrite(i, LOW);
+    delay(1000); 
+      }
+        else
+        {
+    digitalWrite(i,HIGH);
+    delay(1000/i); 
+     digitalWrite(i, LOW);
+    delay(1000/i); 
   }
-}
+  }
+  }
